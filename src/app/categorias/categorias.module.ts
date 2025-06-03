@@ -1,17 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 
-import { CategoriasRoutingModule } from './categorias-routing.module';
-import { CategoriaComponent } from './categoria/categoria.component';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { CategoriaComponent } from "./categoria/categoria.component";
+import { CategoriasRoutingModule } from "./categorias-routing.module";
 
 @NgModule({
-  declarations: [
-    CategoriaComponent
-  ],
-  imports: [
-    CommonModule,
-    CategoriasRoutingModule
-  ]
+  declarations: [CategoriaComponent],
+  imports: [CommonModule, CategoriasRoutingModule, ReactiveFormsModule],
 })
-export class CategoriasModule { }
+export class CategoriasModule {}

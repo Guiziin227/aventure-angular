@@ -2,18 +2,21 @@
   <h2 class="text-2xl font-bold text-gray-700 mg-4">Categoria</h2>
 
   <hr class="text-gray-400" />
-  <form id="categoriaForm">
+  <form id="categoriaForm" [formGroup]="camposForm" (ngSubmit)="save()">
     <div class="mb-4">
       <label class="block text-gray-600 font-medium mb-2">Nome: </label>
       <input
         type="text"
         id="nome"
         name="nome"
-        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400"
+        formControlName="nome"
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
         placeholder="Ex: Restaurantes, Praias, etc."
         required
       />
+      @if (isInvalidField('nome')) {
       <span class="text-red-500 text-sm">Campo obrigatório</span>
+      }
     </div>
 
     <div class="mb-4">
@@ -22,11 +25,14 @@
         rows="4"
         id="descricao"
         name="descricao"
-        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400"
+        formControlName="descricao"
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
         placeholder="Descrição da categoria"
         required
       ></textarea>
+      @if (isInvalidField('descricao')) {
       <span class="text-red-500 text-sm">Campo obrigatório</span>
+      }
     </div>
 
     <button
