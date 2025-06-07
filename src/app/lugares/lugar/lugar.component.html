@@ -1,1 +1,71 @@
-<p>lugar works!</p>
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+  <h2 class="text-2xl font-bold text-gray-700 mg-4">Novo Lugar</h2>
+
+  <hr class="text-gray-400" />
+
+  <form id="lugarForm" [formGroup]="camposForm" (ngSubmit)="save()">
+    <div class="mb-4">
+      <label for="nome" class="block text-gray-600 font-medium mb-2"
+        >Nome do Lugar
+      </label>
+
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        formControlName="nome"
+        placeholder="Ex: Praia do Sol, Restaurante estrela..."
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="nome" class="block text-gray-600 font-medium mb-2"
+        >Categoria
+      </label>
+    </div>
+
+    <div class="mb-4">
+      <label for="localizacao" class="block text-gray-600 font-medium mb-2"
+        >Localização do Lugar
+      </label>
+
+      <input
+        type="text"
+        id="localizacao"
+        name="localizacao"
+        formControlName="localizacao"
+        placeholder="Ex: São paulo..."
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="urlImagem" class="block text-gray-600 font-medium mb-2"
+        >URL da Imagem
+      </label>
+
+      <input
+        type="text"
+        id="urlImagem"
+        name="urlImagem"
+        formControlName="urlImagem"
+        placeholder="Ex: http://example.com/imagem.jpg"
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="nome" class="block text-gray-600 font-medium mb-2"
+        >Avaliação
+      </label>
+    </div>
+  </form>
+
+  <button
+    type="submit"
+    class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  >
+    Cadastrar Lugar
+  </button>
+</div>
