@@ -23,6 +23,18 @@
       <label for="nome" class="block text-gray-600 font-medium mb-2"
         >Categoria
       </label>
+
+      <select
+        name="categoria"
+        id="categoria"
+        formControlName="categoria"
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
+      >
+        <option [value]="">Selecione a categoria</option>
+        <option *ngFor="let c of categorias" [value]="c.nome">
+          {{ c.nome }}
+        </option>
+      </select>
     </div>
 
     <div class="mb-4">
@@ -56,16 +68,29 @@
     </div>
 
     <div class="mb-4">
-      <label for="nome" class="block text-gray-600 font-medium mb-2"
+      <label for="avaliacao" class="block text-gray-600 font-medium mb-2"
         >Avaliação
       </label>
-    </div>
-  </form>
 
-  <button
-    type="submit"
-    class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-  >
-    Cadastrar Lugar
-  </button>
+      <select
+        name="avaliacao"
+        id="avaliacao"
+        formControlName="avaliacao"
+        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-gray-700"
+      >
+        <option [value]="">Selecione uma avaliação</option>
+        <option [value]="1">1 - Ruim</option>
+        <option [value]="2">2 - Regular</option>
+        <option [value]="3">3 - Bom</option>
+        <option [value]="4">4 - Muito Bom</option>
+        <option [value]="5">5 - Excelente</option>
+      </select>
+    </div>
+    <button
+      type="submit"
+      class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      Cadastrar Lugar
+    </button>
+  </form>
 </div>
