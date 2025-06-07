@@ -40,6 +40,8 @@ export class LugarComponent implements OnInit {
   }
 
   save() {
+    this.camposForm.markAllAsTouched(); // Marca todos os campos como tocados para exibir erros de validação
+
     if (this.camposForm.valid) {
       this.lugarService.save(this.camposForm.value).subscribe({
         next: (lugar) => {
