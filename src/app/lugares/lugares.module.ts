@@ -1,17 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 
-import { LugaresRoutingModule } from './lugares-routing.module';
-import { LugarComponent } from './lugar/lugar.component';
-
+import { LugarComponent } from "./lugar/lugar.component";
+import { LugaresRoutingModule } from "./lugares-routing.module";
 
 @NgModule({
-  declarations: [
-    LugarComponent
-  ],
-  imports: [
-    CommonModule,
-    LugaresRoutingModule
-  ]
+  declarations: [LugarComponent],
+  imports: [CommonModule, LugaresRoutingModule, ReactiveFormsModule],
 })
-export class LugaresModule { }
+export class LugaresModule {}
