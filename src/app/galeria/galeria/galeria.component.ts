@@ -24,4 +24,11 @@ export class GaleriaComponent implements OnInit {
     this.categoriaService.getAll().subscribe((c) => (this.categorias = c));
     this.lugarService.getAll().subscribe((l) => (this.lugares = l));
   }
+
+  getTotalStars(lugar: Lugar): string {
+    return (
+      "&#9733;".repeat(lugar.avaliacao || 0) +
+      "&#9734;".repeat(5 - (lugar.avaliacao || 0))
+    );
+  }
 }
