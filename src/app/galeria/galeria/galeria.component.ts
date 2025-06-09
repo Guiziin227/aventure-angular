@@ -14,6 +14,8 @@ import { LugarService } from "../../lugares/lugar.service";
 export class GaleriaComponent implements OnInit {
   lugares: Lugar[] = [];
   categorias: Categoria[] = [];
+  nomeFiltro: string = "";
+  categoriaFiltro: string = "";
 
   constructor(
     private lugarService: LugarService,
@@ -30,5 +32,13 @@ export class GaleriaComponent implements OnInit {
       "&#9733;".repeat(lugar.avaliacao || 0) +
       "&#9734;".repeat(5 - (lugar.avaliacao || 0))
     );
+  }
+
+  filterByNomeOrCategoria() {
+    this.lugarService
+      .filterByNomeOrCategoria(this.nomeFiltro, this.categoriaFiltro)
+      .subscribe((l) => {
+        this.lugares = l;
+      });
   }
 }
