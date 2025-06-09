@@ -11,19 +11,25 @@
   <nav class="mt-4">
     <ul class="flex justify-center space-x-6 text-white font-semibold">
       <li>
-        <a class="hover:text-yellow-300">Galeria</a>
+        <a routerLink="/paginas/galeria" class="hover:text-yellow-300"
+          >Galeria</a
+        >
       </li>
 
       <li>
-        <a class="hover:text-yellow-300">Categoria</a>
+        <a routerLink="/paginas/categorias" class="hover:text-yellow-300"
+          >Categoria</a
+        >
       </li>
 
       <li>
-        <a class="hover:text-yellow-300">Lugares</a>
+        <a routerLink="/paginas/lugares" class="hover:text-yellow-300"
+          >Lugares</a
+        >
       </li>
 
       <li>
-        <a class="hover:text-yellow-300">Sair</a>
+        <a routerLink="/paginas" class="hover:text-yellow-300">Sair</a>
       </li>
     </ul>
   </nav>
@@ -31,8 +37,11 @@
 
 <router-outlet></router-outlet>
 
-
 <footer class="bg-gray-200 text-center p-4 mt-6">
   <p class="text-gray-600">© 2023 Aventure. Todos os direitos reservados.</p>
-  <p class="text-gray-500 text-sm">Desenvolvido por<a href="https://github.com/guiziin227"> Guilherme W. Henriques</a></p>
+  <p class="text-gray-500 text-sm">
+    Desenvolvido por<a href="https://github.com/guiziin227">
+      Guilherme W. Henriques</a
+    >
+  </p>
 </footer>
