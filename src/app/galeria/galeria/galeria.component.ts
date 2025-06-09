@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Categoria } from "../../categorias/categoria";
+import { CategoriaService } from "../../categorias/categoria.service";
+import { Lugar } from "../../lugares/lugar";
+import { LugarService } from "../../lugares/lugar.service";
 
 @Component({
-  selector: 'app-galeria',
+  selector: "app-galeria",
   standalone: false,
-  templateUrl: './galeria.component.html',
-  styleUrl: './galeria.component.scss'
-})
-export class GaleriaComponent {
 
+  templateUrl: "./galeria.component.html",
+  styleUrl: "./galeria.component.scss",
+})
+export class GaleriaComponent implements OnInit {
+  lugares: Lugar[] = [];
+  categorias: Categoria[] = [];
+
+  constructor(
+    private lugarService: LugarService,
+    private categoriaService: CategoriaService
+  ) {}
+
+  ngOnInit(): void {
+    this.categoriaService.getAll().subscribe((c) => (this.categorias = c));
+    this.lugarService.getAll().subscribe((l) => (this.lugares = l));
+  }
 }
