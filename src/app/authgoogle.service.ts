@@ -38,4 +38,8 @@ export class AuthgoogleService {
     this.router.navigate(['']);
   }
 
+  getLoggedProfile(){
+    return this.profile;
+  }
+
 }
