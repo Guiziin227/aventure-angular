@@ -1,1 +1,15 @@
-<p>landingpage works!</p>
+<div class="bg-gradient-to-r from-blue-500 to-blue-700 text-white min-h-screen flex flex-col items-center justify-center">
+  <div class="text-center">
+    <h1 class="text-4xl font-bold mb-4">Bem vindo a Aventure</h1>
+    <p class="text-lg mb-8">Explore, organize e compartilhe lugares incríveis.</p>
+
+    <button *ngIf="isLoggedIn()" (click)="navegation()" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+      Olá {{profile?.name || 'visitante'}}! Vamos começar
+    </button>
+
+    <button *ngIf="!isLoggedIn()" (click)="logarComGoogle()" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300 flex justify-center items-center ml-20">
+      <img width="30px" src="https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_google-512.png" alt="Logo do Google"/>
+      <span>Logar com Google</span>
+    </button>
+  </div>
+</div>
