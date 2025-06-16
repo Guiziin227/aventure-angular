@@ -30,7 +30,6 @@ export class LandingpageComponent {
 
   isLoggedIn(): boolean{
     const googleData = this.loginService.getLoggedProfile();
-    console.log('Google Data:', googleData());
     this.profile = googleData();
     return !!this.profile;
   }
